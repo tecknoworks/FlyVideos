@@ -1,0 +1,836 @@
+﻿<div id="top">
+<div class="container">
+    <div class="col-md-6 offer">
+        <a href="#"></a>
+    </div>
+    <div class="col-md-6">
+        <ul class="menu">
+            <li ng-hide="$ctrl.currentUser== null">
+
+                <span class="login"> <a href="#!/userprofile" data-toggle="modal" data-target="#">{{$ctrl.currentUser.email}}</a></span>
+            </li>
+            <li ng-hide="$ctrl.currentUser!= null">
+                <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+            </li>
+
+            <li ng-hide="$ctrl.currentUser!= null"><a href="/index.html#!/register">Register</a></li>
+
+
+            <li>
+                <a href="/index.html#!/contact">Contact</a>
+            </li>
+            <li>
+                <a href="#">Recently viewed</a>
+            </li>
+            <li ng-show="$ctrl.currentUser!= null">
+                <a href="#" ng-click="$ctrl.LogOutClick()">Log out</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="Login">Customer login</h4>
+            </div>
+            <div class="modal-body">
+                <form action="/index.html#!/customer-orders" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="email-modal" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password-modal" placeholder="password">
+                    </div>
+
+                    <p class="text-center">
+                        <button class="btn btn-primary" " onclick="store()"><i class="fa fa-sign-in"></i> Log in</button>
+                        <!--<script type="text/javascript">
+                        function store(){
+                         var inputEmail= document.getElementById("email");
+                         localStorage.setItem("email", inputEmail.value);
+                         var inputPassword = document.getElementById("password");
+                         localStorage.setItem("password", inputPassword.value);
+
+                        }
+                        </script>-->
+                    </p>
+
+                </form>
+
+                <p class="text-center text-muted">Not registered yet?</p>
+                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- *** TOP BAR END *** -->
+<!-- *** NAVBAR ***
+_________________________________________________________ -->
+
+<div class="navbar navbar-default yamm" role="navigation" id="navbar">
+    <div class="container">
+        <div class="navbar-header">
+
+            <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+                <img src="/Content/Theme/img/logo.png" alt="Obaju logo" class="hidden-xs">
+                <img src="/Content/Theme/img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+            </a>
+            <div class="navbar-buttons">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-align-justify"></i>
+                </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                    <span class="sr-only">Toggle search</span>
+                    <i class="fa fa-search"></i>
+                </button>
+                <a class="btn btn-default navbar-toggle" href="basket.html">
+                    <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs"></span>
+                </a>
+            </div>
+        </div>
+        <!--/.navbar-header -->
+
+        <div class="navbar-collapse collapse" id="navigation">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active">
+                    <a href="/index.html#!/home">Home</a>
+                </li>
+                <li class="dropdown yamm-fw">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Drones <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <ul>
+
+                                            <li><h4><a href="/index.html#!/verysmalldrones">Very Small Drones</a></h4></li>
+
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li><h4><a href="/index.html#!/smalldrones">Small Drones</a></h4></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li><h4><a href="/index.html#!/mediumdrones">Medium Drones</a></h4></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li><h4><a href="/index.html#!/largedrones">Large Drones</a></h4></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.yamm-content -->
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown yamm-fw">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Accessories <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li><h4><a href="/index.html#!/bags">Drone Bags & Cases</a></h4></li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li><h4><a href="/index.html#!/batteries">Drone Batteries</a></h4></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li><h4><a href="/index.html#!/remotes">Drone Remotes</a></h4></li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li><h4><a href="/index.html#!/parts">Drone Parts</a></h4></li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.yamm-content -->
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown yamm-fw">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Shop</h5>
+                                        <ul>
+                                            <li>
+                                                <a href="/index.html#!/home">Homepage</a>
+                                            </li>
+                                            <li>
+                                                <a href="/index.html#!/store">Store</a>
+                                            </li>
+                                            
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>User</h5>
+                                        <ul>
+                                            <li>
+                                                <a href="/index.html#!/register">Register / login</a>
+                                            </li>
+                                           
+                                            <li>
+                                                <a href="/index.html#!/userprofile">User Profile</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>Order process</h5>
+                                        <ul>
+                                            <li>
+                                                <a href="/index.html#!/cart">Shopping cart</a>
+                                            </li>
+                                           
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- /.yamm-content -->
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <!--/.nav-collapse -->
+
+        <div class="navbar-buttons">
+
+            <div class="navbar-collapse collapse right" id="basket-overview">
+                <a href="/index.html#!/cart" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm"></span></a>
+            </div>
+            <!--/.nav-collapse -->
+
+            <div class="navbar-collapse collapse right" id="search-not-mobile">
+                <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
+                    <span class="sr-only">Toggle search</span>
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="collapse clearfix" id="search">
+
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+
+                    </span>
+                </div>
+            </form>
+
+        </div>
+        <!--/.nav-collapse -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#navbar -->
+<!-- *** NAVBAR END *** -->
+
+
+<div id="all">
+
+    <div id="content">
+        <div class="container">
+
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        Product Detail
+                    </li>
+                   
+                   
+                </ul>
+
+            </div>
+
+            <div class="col-md-3">
+                <!-- *** MENUS AND FILTERS ***
+                _________________________________________________________ -->
+                <div class="panel panel-default sidebar-menu">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Categories</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked category-menu">
+                            <li>
+                                <a href="store.html">Drones <!--<span class="badge pull-right">42</span>--></a>
+                                <ul>
+                                    <li>
+                                        <a href="/index.html#!/store">Very Small Drones</a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.html#!/store">Small Drones</a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.html#!/store">Medium Drones</a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.html#!/store">Large Drones</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Accessories  <!--<span class="badge pull-right">123</span>--></a>
+                                <ul>
+                                    <li>
+                                        <a href="/index.html#!/store">Drone Bags & Cases</a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.html#!/store">Drone Batteries</a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.html#!/store">Drone Remotes</a>
+                                    </li>
+                                    <li>
+                                        <a href="/index.html#!/store">Drone Parts</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+
+               
+
+                <!--<div class="panel panel-default sidebar-menu">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Colours <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <form>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <span class="colour white"></span> White (14)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <span class="colour blue"></span> Blue (10)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <span class="colour green"></span> Green (20)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <span class="colour yellow"></span> Yellow (13)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <span class="colour red"></span> Red (10)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+
+                        </form>
+
+                    </div>
+                </div>-->
+
+                <!-- *** MENUS AND FILTERS END *** -->
+
+                <!--<div class="banner">
+                    <a href="#">
+                        <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
+                    </a>
+                </div>-->
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row" id="productMain">
+                    <div class="col-sm-6">
+                        <div id="mainImage">
+                            <img ng-src="{{$ctrl.DetailVM.BigImage}}" alt="" class="img-responsive">
+                        </div>
+
+                       
+                        <!-- /.ribbon -->
+
+                       
+                        <!-- /.ribbon -->
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="box">
+                            <h1 class="text-center" >{{$ctrl.DetailVM.Name}}</h1>
+                            <!--<p class="goToDescription">
+                               <a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
+                            </p>-->
+                            <p class="price">{{$ctrl.DetailVM.Price}}$</p>
+
+                            <p class="text-center buttons">
+                                <a  class="btn btn-primary" ng-click="$ctrl.addToCart($ctrl.DetailVM)" ><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                <a href="/index.html#!/cart" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                            </p>
+
+
+                        </div>
+
+                        <div class="row" id="thumbs">
+                            <div class="col-xs-4">
+                                <a href="{{$ctrl.DetailVM.BigImage}}" class="thumb">
+                                    <img ng-src="{{$ctrl.DetailVM.BigImage}}" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="{{$ctrl.DetailVM.TwoImage}}" class="thumb">
+                                    <img ng-src="{{$ctrl.DetailVM.TwoImage}}"  alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="{{$ctrl.DetailVM.OneImage}}" class="thumb">
+                                    <img ng-src="{{$ctrl.DetailVM.OneImage}}" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="box" id="details">
+                    <p>
+                        <h3>Product details</h3>
+                    <h4>{{$ctrl.DetailVM.Description}}</h4>
+                    
+                  
+                    
+
+                    <hr>
+                    <div class="social">
+                        <h4>Show it to your friends</h4>
+                        <p>
+                            <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                        </p>
+                </div>   
+                 </div>
+                </div>
+
+                <div class="row same-height-row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="box same-height">
+                            <h3>You may also like these products</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product same-height">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product2_2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/index.html#!/detail" class="invisible">
+                                <img src="/Content/Theme/img/product2.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="text">
+                                <h3>Fur coat</h3>
+                                <p class="price">$143</p>
+                            </div>
+                        </div>
+                        <!-- /.product -->
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product same-height">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product1.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product1_2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/index.html#!/detail" class="invisible">
+                                <img src="/Content/Theme/img/product1.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="text">
+                                <h3>Fur coat</h3>
+                                <p class="price">$143</p>
+                            </div>
+                        </div>
+                        <!-- /.product -->
+                    </div>
+
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product same-height">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product3.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product3_2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/index.html#!/detail" class="invisible">
+                                <img src="/Content/Theme/img/product3.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="text">
+                                <h3>Fur coat</h3>
+                                <p class="price">$143</p>
+
+                            </div>
+                        </div>
+                        <!-- /.product -->
+                    </div>
+
+                </div>
+
+                <div class="row same-height-row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="box same-height">
+                            <h3>Products viewed recently</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product same-height">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product2_2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/index.html#!/detail" class="invisible">
+                                <img src="/Content/Theme/img/product2.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="text">
+                                <h3>Fur coat</h3>
+                                <p class="price">$143</p>
+                            </div>
+                        </div>
+                        <!-- /.product -->
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product same-height">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product1.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product1_2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/index.html#!/detail" class="invisible">
+                                <img src="/Content/Theme/img/product1.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="text">
+                                <h3>Fur coat</h3>
+                                <p class="price">$143</p>
+                            </div>
+                        </div>
+                        <!-- /.product -->
+                    </div>
+
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product same-height">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product3.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="/index.html#!/detail">
+                                            <img src="/Content/Theme/img/product3_2.jpg" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/index.html#!/detail" class="invisible">
+                                <img src="/Content/Theme/img/product3.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="text">
+                                <h3>Fur coat</h3>
+                                <p class="price">$143</p>
+
+                            </div>
+                        </div>
+                        <!-- /.product -->
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.col-md-9 -->
+        </div>
+        <!-- /.container -->
+    </div>
+
+
+
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>Pages</h4>
+
+                    <ul>
+                        <li>
+                            <a href="/index.html#!/text">About us</a>
+                        </li>
+                        <li>
+                            <a href="/index.html#!/text.">Terms and conditions</a>
+                        </li>
+                        <li>
+                            <a href="/index.html#!/faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="/index.html#!/contact">Contact us</a>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h4 ng-hide="$ctrl.currentUser!= null">User section</h4>
+
+                    <ul ng-hide="$ctrl.currentUser!= null">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        </li>
+                        <li>
+                            <a href="/index.html#!/register">Regiter</a>
+                        </li>
+                    </ul>
+
+                    <hr class="hidden-md hidden-lg hidden-sm">
+
+                </div>
+                <!-- /.col-md-3 -->
+
+                <div class="col-md-3 col-sm-6">
+
+                    <h4>Top categories</h4>
+
+                    <h5>Drones</h5>
+
+                    <ul>
+                        <li>
+                            <a href="/index.html#!/verysmalldrones">Very Small Drones</a>
+                        </li>
+                        <li>
+                            <a href="/index.html#!/smalldrones">Small Drones</a>
+                        </li>
+                        <li>
+                            <a href="/index.html#!/mediumdrones">Medium Drones</a>
+                        </li>
+
+                        <li>
+                            <a href="/index.html#!/largedrones">Large Drones</a>
+                        </li>
+                    </ul>
+
+                    <h5>Accessories</h5>
+                    <ul>
+                        <li>
+                            <a href="/index.html#!/bags">Drone Bags & Cases</a>
+                        </li>
+
+                        <li>
+                            <a href="/index.html#!/batteries">Drone Batteries</a>
+                        </li>
+
+                        <li>
+                            <a href="/index.html#!/remotes">Drone Remotes</a>
+                        </li>
+
+                        <li>
+                            <a href="/index.html#!/parts">Drone Parts</a>
+                        </li>
+                    </ul>
+
+                    <hr class="hidden-md hidden-lg">
+
+                </div>
+                <!-- /.col-md-3 -->
+
+                <div class="col-md-3 col-sm-6">
+
+                    <h4>Where to find us</h4>
+
+                    <p>
+                        <strong>FlyVideos</strong>
+                        <br>Calea Dorobantilor 33
+                        <br>400117 Cluj
+                        <br>Cluj-NAPOCA
+                        <br>
+                        <strong>Romania</strong>
+                    </p>
+
+                    <a href="/index.html#!/contact">Go to contact page</a>
+
+                    <hr class="hidden-md hidden-lg">
+
+                </div>
+                <!-- /.col-md-3 -->
+
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <h4>Get the news</h4>
+
+
+
+                    <form>
+                        <div class="input-group">
+
+                            <input type="text" class="form-control">
+
+                            <span class="input-group-btn">
+
+                                <button class="btn btn-default" type="button">Subscribe!</button>
+
+                            </span>
+
+                        </div>
+                        <!-- /input-group -->
+                    </form>
+
+                    <hr>
+
+                    <h4>Stay in touch</h4>
+
+                    <p class="social">
+                        <a href="#" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="instagram external" data-animate-hover="shake"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="gplus external" data-animate-hover="shake"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
+                    </p>
+
+
+                </div>
+                <!-- /.col-md-3 -->
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#footer -->
+    <!-- *** FOOTER END *** -->
+    <!-- *** COPYRIGHT ***
+    _________________________________________________________ -->
+    <div id="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p class="pull-left">© 2015 Your name goes here.</p>
+
+            </div>
+            <div class="col-md-6">
+                <p class="pull-right">
+                    Template by <a href="http://bootstrapious.com/e-commerce-templates">Bootstrapious</a> with support from <a href="https://kakusei.cz">Kakusei</a>
+                    <!-- Not removing these links is part of the licence conditions of the template. Thanks for understanding :) -->
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- *** COPYRIGHT END *** -->
+</div>
+<!-- /#all -->
+<!-- *** SCRIPTS TO INCLUDE *** -->
